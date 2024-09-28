@@ -1,0 +1,28 @@
+name: Publish And Release
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Publish to npmjs
+        run: pnpm publish --access public --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+
+      - run: tar -zcvf release.tgz ./
+
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          token: ${{ secrets.GHP_TOKEN }}
+          name: ${{ github.ref }}
+          files: ./release.tgz
+          draft: false
+        
