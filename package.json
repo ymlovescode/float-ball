@@ -11,8 +11,5 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "repository": "https://github.com/ymlovescode/float-ball",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/ymlovescode"
-  }
+  "repository": "https://github.com/ymlovescode/float-ball"
 }
