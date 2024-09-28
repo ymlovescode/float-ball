@@ -1,12 +1,18 @@
 {
-  "name": "dragger-float-ball",
+  "name": "@ymlovescode/float-ball",
   "version": "1.0.0",
   "description": "",
   "main": "lib/float.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "patch": "npm version patch && npm publish",
+    "minor": "npm version minor && npm publish",
+    "major": "npm version major && npm publish"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": "https://github.com/ymlovescode/float-ball",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/ymlovescode"
+  }
 }
